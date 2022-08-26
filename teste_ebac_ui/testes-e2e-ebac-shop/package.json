@@ -1,0 +1,29 @@
+{
+  "name": "teste-ebac-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:report": "cypress run --record --key 5b75141d-7f0e-4c3b-b040-ba9d374d0003",
+    "cy:run": "npx cypress run --browser chrome",
+    "cy:open": "npx cypress openn"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "cypress": "^8.2.0"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}
