@@ -38,6 +38,24 @@ Cypress.Commands.add("token", (email, senha) => {
   });
 });
 
+Cypress.Commands.add("cadastrarUsuario", (token, nome, email, senha, admin) => {
+  cy.request({
+    method: "POST",
+    url: "usuarios",
+    body: {
+      nome: nome,
+      email: email,
+      password: senha,
+      administrador: admin,
+    },
+    headers: { authorization: token },
+  }).then((response) => {
+    expect(response.status).to.equal(201);
+    expect(response.body.message).to.equal("Cadastro realizado com sucesso");
+    
+  });
+});
+
 Cypress.Commands.add(
   "cadastrarProduto",
   (token, produto, preco, descricao, quantidade) => {
@@ -76,7 +94,7 @@ Cypress.Commands.add(
 //         descricao: descricao,
 //         quantidade: quantidade,
 //       },
-      
+
 //     });
 //   }
 // );

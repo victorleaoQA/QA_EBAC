@@ -1,4 +1,6 @@
 const { faker } = require("@faker-js/faker");
+import contrato from '../contracts/produtos.contracts'
+
 
 describe("Teste de funcionalidade produtos", () => {
   let token;
@@ -7,6 +9,12 @@ describe("Teste de funcionalidade produtos", () => {
     cy.token("fulano@qa.com", "teste").then((tkn) => {
       token = tkn;
     });
+  });
+
+  it('Deve validar contrato de produtos', () => {
+    cy.request('produtos').then(response => {
+      return contrato.validateAsync(response.body)
+    })
   });
 
   it("Listar produtos", () => {
