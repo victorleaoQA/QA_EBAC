@@ -1,5 +1,7 @@
+/// <reference types="cypress"/>
+
 const { faker } = require("@faker-js/faker");
-import contrato from '../contracts/produtos.contracts'
+import contrato from '../e2e/contracts/produtos.contracts'
 
 
 describe("Teste de funcionalidade produtos", () => {
@@ -71,6 +73,7 @@ describe("Teste de funcionalidade produtos", () => {
 
   it("Deve fazer a edição de um determinado produto cadastrado", () => {
     cy.request("produtos").then((response) => {
+      let produto = `iPhone ${Math.floor(Math.random() * 10000)}`
       let id = response.body.produtos[5]._id;
 
       cy.request({
@@ -80,7 +83,7 @@ describe("Teste de funcionalidade produtos", () => {
           authorization: token,
         },
         body: {
-          nome: "Novo nome v9",
+          nome: produto,
           preco: 470,
           descricao: "Nova descrição do produto",
           quantidade: 381,
