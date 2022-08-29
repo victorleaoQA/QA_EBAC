@@ -21,8 +21,9 @@
   },
   "homepage": "https://github.com/victorleaoQA/teste_ebac_ui#readme",
   "dependencies": {
-    "faker": "^6.6.6"
+    "faker": "^5.5.3"
+  },
+  "devDependencies": {
+    "cypress": "^10.6.0"
   }
-
-  
 }
