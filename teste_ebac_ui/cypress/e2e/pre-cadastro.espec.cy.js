@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
-import { faker } from "@faker-js/faker";
+const faker = require('faker-br');
+const Faker = require('faker-br/lib');
 
 
 describe('Funcionalidade pré-cadastro', () => {
