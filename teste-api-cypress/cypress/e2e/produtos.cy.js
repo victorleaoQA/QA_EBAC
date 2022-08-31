@@ -27,7 +27,7 @@ describe("Teste de funcionalidade produtos", () => {
   });
 
   //Usando Commands
-  it("Deve validar uma mensagem de erro ao tentar cadastrar um memso produto", () => {
+  it("Deve validar uma mensagem de erro ao tentar cadastrar um mesmo produto", () => {
     cy.cadastrarProduto(token, "Videogame", 100, "Descricao", 200).then(
       (response) => {
         expect(response.status).to.equals(400);
